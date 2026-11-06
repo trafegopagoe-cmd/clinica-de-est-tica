@@ -1,0 +1,1102 @@
+/* ========================================
+   DRA. THAYNNY DE PAULA
+   Design moderno, elegante e responsivo
+======================================== */
+
+/* 1. CONFIGURAÇÕES GERAIS */
+
+:root {
+    --cor-principal: #a66d72;
+    --cor-principal-escura: #805157;
+    --cor-fundo: #fbf7f5;
+    --cor-clara: #ffffff;
+    --cor-texto: #39312f;
+    --cor-texto-suave: #766c69;
+    --cor-detalhe: #ead8d5;
+    --fonte-titulo: "Playfair Display", Georgia, serif;
+    --fonte-texto: "DM Sans", Arial, sans-serif;
+    --sombra: 0 12px 35px rgba(70, 43, 40, 0.08);
+    --transicao: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin-inline: auto;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+p {
+    color: var(--cor-texto-suave);
+}
+
+::selection {
+    color: white;
+    background: var(--cor-principal);
+}
+
+
+/* 2. BOTÕES */
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 25px;
+    border: 1px solid var(--cor-principal);
+    border-radius: 4px;
+    background: var(--cor-principal);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transicao);
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: var(--cor-principal-escura);
+    border-color: var(--cor-principal-escura);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(166, 109, 114, 0.25);
+}
+
+.botao-secundario {
+    background: transparent;
+    color: var(--cor-principal-escura);
+    border-radius: 4px;
+    justify-content: center;
+    padding: 14px 25px;
+    font-weight: 600;
+    transition: var(--transicao);
+    cursor: pointer;
+}
+
+.botao-secundario:hover {
+    background: var(--cor-principal);
+    color: white;
+}
+
+.botao-claro {
+    background: white;
+    color: var(--cor-principal-escura);
+    border-color: white;
+}
+
+.botao-claro:hover {
+    background: var(--cor-detalhe);
+    border-color: var(--cor-detalhe);
+    color: var(--cor-principal-escura);
+}
+
+
+/* 3. CABEÇALHO */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(251, 247, 245, 0.95);
+    border-bottom: 1px solid rgba(234, 216, 213, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.cabecalho .container {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-nome {
+    display: block;
+    color: var(--cor-principal-escura);
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.logo-descricao {
+    display: block;
+    color: var(--cor-texto-suave);
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.menu a {
+    position: relative;
+    color: var(--cor-texto);
+    font-size: 0.85rem;
+    transition: color var(--transicao);
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background: var(--cor-principal);
+    transition: width var(--transicao);
+}
+
+.menu a:hover {
+    color: var(--cor-principal);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* 4. SEÇÃO PRINCIPAL — HERO */
+
+.hero {
+    position: relative;
+    padding: 80px 0 90px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 20%,
+            rgba(234, 216, 213, 0.55),
+            transparent 35%),
+        var(--cor-fundo);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(166, 109, 114, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-texto {
+    position: relative;
+    z-index: 1;
+    animation: aparecerEsquerda 0.8s ease both;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 22px;
+    color: var(--cor-principal-escura);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+    font-size: clamp(2.7rem, 5vw, 4.6rem);
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: var(--cor-principal);
+    font-style: italic;
+}
+
+.hero-texto>p {
+    max-width: 520px;
+    margin-bottom: 30px;
+    font-size: 1.03rem;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-bottom: 35px;
+}
+
+.hero-informacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    color: var(--cor-texto-suave);
+    font-size: 0.8rem;
+}
+
+.hero-imagem {
+    position: relative;
+    min-height: 500px;
+    animation: aparecerDireita 0.9s ease both;
+}
+
+.hero-imagem img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 180px 180px 8px 8px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: var(--sombra);
+}
+
+.cartao-flutuante {
+    position: absolute;
+    right: -25px;
+    bottom: 35px;
+    z-index: 2;
+    max-width: 250px;
+    padding: 20px 24px;
+    border: 1px solid rgba(234, 216, 213, 0.8);
+    border-radius: 5px;
+    background: white;
+    box-shadow: var(--sombra);
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.cartao-flutuante strong {
+    display: block;
+    color: var(--cor-principal-escura);
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+}
+
+.cartao-flutuante p {
+    font-size: 0.8rem;
+}
+
+
+/* 5. FAIXA DE DIFERENCIAIS */
+
+.diferenciais {
+    padding: 28px 0;
+    background: var(--cor-principal-escura);
+    color: white;
+}
+
+.diferenciais-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.diferenciais-lista>* {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.diferenciais-lista strong {
+    font-weight: 600;
+}
+
+
+/* 6. CONFIGURAÇÃO DAS SEÇÕES */
+
+.secao {
+    padding: 100px 0;
+}
+
+.secao-cabecalho {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.secao-cabecalho .etiqueta {
+    margin-bottom: 14px;
+}
+
+.secao-cabecalho h2 {
+    margin-bottom: 18px;
+}
+
+.secao-cabecalho p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.centralizado {
+    text-align: center;
+}
+
+
+/* 7. SOBRE A PROFISSIONAL */
+
+.sobre {
+    background: white;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.sobre-imagem {
+    position: relative;
+}
+
+.sobre-imagem img {
+    min-height: 480px;
+    max-height: 600px;
+    border-radius: 5px;
+    object-position: center;
+}
+
+.sobre-imagem::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 0;
+    border: 1px solid var(--cor-detalhe);
+    border-radius: 5px;
+}
+
+.sobre-imagem img {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-texto h2 {
+    margin-bottom: 25px;
+}
+
+.sobre-texto>p {
+    margin-bottom: 18px;
+}
+
+.assinatura {
+    margin-top: 30px;
+    color: var(--cor-principal-escura);
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+
+/* 8. PROCEDIMENTOS */
+
+.procedimentos {
+    background: var(--cor-fundo);
+}
+
+.categoria-titulo {
+    margin: 45px 0 25px;
+    color: var(--cor-principal-escura);
+    font-size: 1.7rem;
+}
+
+.procedimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.procedimento-card {
+    overflow: hidden;
+    border: 1px solid rgba(234, 216, 213, 0.8);
+    border-radius: 5px;
+    background: white;
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.procedimento-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--sombra);
+}
+
+.procedimento-card img {
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.procedimento-card:hover img {
+    transform: scale(1.04);
+}
+
+.procedimento-info {
+    padding: 24px;
+}
+
+.procedimento-info h3 {
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+}
+
+.procedimento-info p {
+    font-size: 0.9rem;
+}
+
+.outros-procedimentos {
+    margin-top: 35px;
+    padding: 25px;
+    border-left: 3px solid var(--cor-principal);
+    background: white;
+}
+
+.outros-procedimentos p {
+    font-size: 0.93rem;
+}
+
+
+/* 9. DESTAQUE — LASER LAVIEEN */
+
+.destaque {
+    position: relative;
+    overflow: hidden;
+    background: #f0e3df;
+}
+
+.destaque-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.destaque-imagem img {
+    height: 480px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.destaque-texto .etiqueta {
+    margin-bottom: 15px;
+}
+
+.destaque-texto h2 {
+    margin-bottom: 22px;
+}
+
+.destaque-texto p {
+    margin-bottom: 20px;
+}
+
+.destaque-texto .botao {
+    margin-top: 10px;
+}
+
+
+/* 10. NUTRIÇÃO */
+
+.nutricao {
+    background: white;
+}
+
+.nutricao-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.nutricao-texto h2 {
+    margin-bottom: 22px;
+}
+
+.nutricao-texto p {
+    margin-bottom: 18px;
+}
+
+.nutricao-imagem img {
+    height: 420px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+/* 11. AVALIAÇÕES */
+
+.avaliacoes {
+    background: var(--cor-fundo);
+}
+
+.avaliacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.avaliacao-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid var(--cor-detalhe);
+    border-radius: 5px;
+    background: white;
+    transition: transform var(--transicao);
+}
+
+.avaliacao-card:hover {
+    transform: translateY(-5px);
+}
+
+.estrelas {
+    margin-bottom: 18px;
+    color: #c49a55;
+    letter-spacing: 3px;
+}
+
+.avaliacao-card p {
+    flex: 1;
+    margin-bottom: 25px;
+    font-size: 0.92rem;
+    font-style: italic;
+}
+
+.avaliacao-autor {
+    padding-top: 18px;
+    border-top: 1px solid var(--cor-detalhe);
+    color: var(--cor-principal-escura);
+    font-weight: 600;
+}
+
+.observacao-avaliacoes {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.avaliacoes-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--cor-principal-escura);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+
+/* 12. CONTATO */
+
+.contato {
+    background: white;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 55px;
+}
+
+.contato-texto h2 {
+    margin-bottom: 20px;
+}
+
+.contato-texto>p {
+    margin-bottom: 30px;
+}
+
+.contato-lista {
+    display: grid;
+    gap: 22px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.contato-icone {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--cor-fundo);
+    color: var(--cor-principal-escura);
+}
+
+.contato-item h3 {
+    margin-bottom: 4px;
+    font-family: var(--fonte-texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.contato-item p,
+.contato-item a {
+    font-size: 0.9rem;
+}
+
+.contato-item a:hover {
+    color: var(--cor-principal);
+}
+
+.contato-mapa {
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: var(--cor-detalhe);
+    box-shadow: var(--sombra);
+}
+
+.contato-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: 0;
+}
+
+.link-mapa {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--cor-principal-escura);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* 13. CHAMADA FINAL */
+
+.chamada-final {
+    position: relative;
+    overflow: hidden;
+    padding: 85px 0;
+    background: var(--cor-principal-escura);
+    color: white;
+    text-align: center;
+}
+
+.chamada-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.chamada-conteudo h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.chamada-conteudo p {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* 14. RODAPÉ */
+
+.rodape {
+    padding: 60px 0 25px;
+    background: #2f2928;
+    color: white;
+}
+
+.rodape-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 40px;
+}
+
+.rodape .logo-nome,
+.rodape-marca h3 {
+    color: white;
+}
+
+.rodape-marca p {
+    max-width: 330px;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.88rem;
+}
+
+.rodape h3 {
+    margin-bottom: 18px;
+    color: white;
+    font-family: var(--fonte-texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.rodape-links a {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.88rem;
+    transition: color var(--transicao);
+}
+
+.rodape-links a:hover {
+    color: white;
+}
+
+.rodape-inferior {
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+
+/* 15. ANIMAÇÕES */
+
+@keyframes aparecerEsquerda {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecerDireita {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* 16. TABLETS */
+
+@media (max-width: 1000px) {
+    .cabecalho .container {
+        gap: 15px;
+    }
+
+    .navegacao {
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 0.8rem;
+    }
+
+    .hero-conteudo {
+        gap: 40px;
+    }
+
+    .hero-imagem {
+        min-height: 420px;
+    }
+
+    .sobre-grid,
+    .destaque-grid,
+    .nutricao-conteudo {
+        gap: 40px;
+    }
+
+    .procedimentos-grid,
+    .avaliacoes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rodape-grid {
+        gap: 30px;
+    }
+}
+
+
+/* 17. CELULARES E TELAS PEQUENAS */
+
+@media (max-width: 760px) {
+    .container {
+        width: min(100% - 36px, 560px);
+    }
+
+    .secao {
+        padding: 70px 0;
+    }
+
+    .cabecalho .container {
+        min-height: 75px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    .logo {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navegacao {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+    }
+
+    .menu a {
+        font-size: 0.78rem;
+    }
+
+    .navegacao>.botao {
+        padding: 9px 14px;
+        font-size: 0.78rem;
+    }
+
+    .hero {
+        padding: 55px 0 65px;
+    }
+
+    .hero-conteudo {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    .hero-texto>p {
+        font-size: 0.95rem;
+    }
+
+    .hero-imagem {
+        min-height: 380px;
+        margin: 0 10px 15px 0;
+    }
+
+    .cartao-flutuante {
+        right: -10px;
+        bottom: 18px;
+        max-width: 215px;
+        padding: 15px;
+    }
+
+    .hero-informacoes {
+        gap: 12px;
+    }
+
+    .diferenciais {
+        padding: 24px 0;
+    }
+
+    .diferenciais-lista {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .secao-cabecalho {
+        margin-bottom: 35px;
+    }
+
+    .sobre-grid,
+    .destaque-grid,
+    .nutricao-conteudo,
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .sobre-imagem {
+        margin: 10px 10px 0;
+    }
+
+    .sobre-imagem img {
+        min-height: 350px;
+        max-height: 480px;
+    }
+
+    .destaque-imagem img,
+    .nutricao-imagem img {
+        height: 330px;
+    }
+
+    .procedimentos-grid,
+    .avaliacoes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .procedimento-card img {
+        height: 240px;
+    }
+
+    .categoria-titulo {
+        margin-top: 35px;
+        font-size: 1.5rem;
+    }
+
+    .avaliacao-card {
+        padding: 25px;
+    }
+
+    .contato-mapa,
+    .contato-mapa iframe {
+        min-height: 320px;
+    }
+
+    .chamada-final {
+        padding: 65px 0;
+    }
+
+    .rodape {
+        padding-top: 45px;
+    }
+
+    .rodape-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .rodape-marca p {
+        margin-inline: auto;
+    }
+
+    .rodape-links {
+        align-items: center;
+    }
+
+    .whatsapp-flutuante {
+        right: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
+    }
+}
+
+
+/* 18. ACESSIBILIDADE: REDUZIR ANIMAÇÕES */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
